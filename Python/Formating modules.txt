@@ -1,0 +1,6 @@
+black
+    black file.py
+
+autopep8 
+    autopep8 --in-place --aggressive --aggressive your_script.py
+    autopep8 file.py

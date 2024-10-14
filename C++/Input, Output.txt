@@ -1,0 +1,9 @@
+In C programming, these are handled by functions in the stdio.h library:
+
+    Input functions:
+        scanf(): Reads formatted input from the user or a file.
+        fscanf(): Reads formatted input from a file.
+
+    Output functions:
+        printf(): Prints formatted output to the console.
+        fprintf(): Prints formatted output to a file.

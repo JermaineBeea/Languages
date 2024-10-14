@@ -1,0 +1,15 @@
+Schedule a task using schtasks
+This will play the song at 10:30 AM once. Replace C:\Path\To\Player.exe with the path to your media player (e.g., wmplayer.exe for Windows Media Player) and C:\Path\To\Song.mp3 with the path to your song.
+
+schtasks /create /tn "Play Song" /tr "C:\Path\To\Player.exe C:\Path\To\Song.mp3" /sc once /st 10:30
+
+Using schtasks:
+
+This command lists all scheduled tasks in a detailed view.
+schtasks /query /fo LIST /v
+
+
+Using Task Scheduler GUI:
+Open Task Scheduler (taskschd.msc).
+In the left panel, click on “Task Scheduler Library” to view all scheduled tasks.
+

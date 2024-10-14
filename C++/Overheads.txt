@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+In C programming, the `.h` in a file name stands for **header**. Header files contain declarations of functions, macros, constants, and types that can be shared across multiple C source files (`.c` files).
+
+For example:
+- `stdio.h`: Declares functions for input and output operations, such as `printf()` and `scanf()`.
+- `stdlib.h`: Declares functions for memory management, random numbers, and process control, like `malloc()` and `exit()`.
+- `stdbool.h`: Defines the boolean data type (`bool`) and the values `true` and `false` in C.
+
+In summary, header files allow code modularity by keeping the declarations separate from the implementation. They are included using `#include` in your `.c` files to make these functions and types available in your program.

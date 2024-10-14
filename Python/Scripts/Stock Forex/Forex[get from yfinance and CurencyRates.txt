@@ -1,0 +1,31 @@
+from python_forex.converter import CurrencyRates  
+
+CurrencyRates().get_rate, 
+CurrencyRates().get_rates,
+CurrencyRates().convert
+
+import yfinance as yf
+
+def get_current_exchange_rate(base_currency, target_currency):
+    pair = f"{base_currency}{target_currency}=X"
+    data = yf.download(pair, period="1d")
+    return data['Close'][0]
+
+rate = get_current_exchange_rate('USD', 'EUR')
+print(rate)
+
+
+>>> from datetime import datetime
+>>> from forex_python.converter import get_rate
+
+>>> t = datetime(2001, 10, 18)  # the 18th of October, 2001
+>>> get_rate("USD", "GBP", t)
+0.69233
+>>> get_rate("GBP", "USD", t)
+1.4444
+>>> 1 / 1.4444   # check
+0.6923289947382997 
+
+>>> t = datetime(2006, 6, 26)  # June 26th, 2006
+>>> get_rate("GBP", "USD", t)
+1.8202

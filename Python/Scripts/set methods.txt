@@ -1,0 +1,61 @@
+Equality (==):
+Two sets are equal if they contain the same elements, regardless of the order.
+set1 = {1, 2, 3}
+set2 = {3, 2, 1}
+print(set1 == set2) # True
+
+Inequality (!=):
+Checks if two sets are not equal.
+print(set1 != set2) # False
+
+Subset (issubset() or <=):
+A set A is a subset of set B if all elements of A are in B.
+A <= B: Returns True if A is a subset of B.
+A.issubset(B): Method to check if A is a subset of B.
+set1 = {1, 2}
+set2 = {1, 2, 3}
+print(set1 <= set2) # True
+print(set1.issubset(set2)) # True
+
+Proper Subset (<):
+A set A is a proper subset of set B if A is a subset of B but not equal to B.
+print(set1 < set2) # True
+
+Superset (issuperset() or >=):
+A set A is a superset of set B if all elements of B are in A.
+A >= B: Returns True if A is a superset of B.
+A.issuperset(B): Method to check if A is a superset of B.
+print(set2 >= set1) # True
+print(set2.issuperset(set1)) # True
+
+Proper Superset (>):
+A set A is a proper superset of set B if A is a superset of B but not equal to B.
+print(set2 > set1) # True
+
+Intersection (& or intersection()):
+Returns a set of elements common to both sets.
+set1 = {1, 2, 3}
+set2 = {2, 3, 4}
+print(set1 & set2) # {2, 3}
+print(set1.intersection(set2)) # {2, 3}
+
+Union (| or union()):
+Returns a set containing all elements from both sets.
+print(set1 | set2) # {1, 2, 3, 4}
+print(set1.union(set2)) # {1, 2, 3, 4}
+
+Difference (- or difference()):
+Returns a set containing elements in the first set but not in the second.
+print(set1 - set2) # {1}
+print(set1.difference(set2)) # {1}
+
+Symmetric Difference (^ or symmetric_difference()):
+Returns a set containing elements in either set, but not in both (i.e., elements not common to both sets).
+print(set1 ^ set2) # {1, 4}
+print(set1.symmetric_difference(set2)) # {1, 4}
+
+Disjoint Sets (isdisjoint()):
+Returns True if two sets have no elements in common.
+set3 = {5, 6}
+print(set1.isdisjoint(set3)) # True (if set3 has no elements of set1)
+print(set1.isdisjoint(set2)) # False (because 2 and 3 are common)

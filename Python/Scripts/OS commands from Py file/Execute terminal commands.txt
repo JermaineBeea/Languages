@@ -1,0 +1,25 @@
+import subprocess
+def find_file(filename):
+    command = f"find / -name {filename}"
+    process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    output, error = process.communicate()
+
+    if process.returncode != 0:
+        print(f"Error occurred: {error.decode().strip()}")
+    else:
+        print(f"Output: {output.decode().strip()}")
+# Usage
+find_file("_filename_")
+
+import os
+def find_file(filename):
+    current_dir = os.getcwd()
+    workspace_dir = os.path.join(current_dir, 'workspace', 'netbeea', 'Python')
+    file_path = os.path.join(workspace_dir, filename)
+    if os.path.exists(file_path):
+        return file_path
+    else:
+        return None
+# Usage
+path_name = find_file('time_1.py')
+print(path_name)

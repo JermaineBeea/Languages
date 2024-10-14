@@ -1,0 +1,41 @@
+Adding a Directory to Your PATH
+To execute programs or scripts from any terminal location in Unix-like operating systems (Linux or macOS), you can add a directory to your PATH variable. Follow these steps:
+
+Step 1: Open Your Shell Configuration File
+The PATH variable is set in your shell configuration file, which varies by shell:
+
+    For Bash:
+        Edit .bashrc:
+        nano ~/.bashrc
+        Or, for login shells, edit .bash_profile:
+        nano ~/.bash_profile
+
+    For Zsh:
+    nano ~/.zshrc
+
+Step 2: Add the Directory to PATH
+Decide which directory you want to add to your PATH. For example, if you want to add ~/Documents/Languages/C++/Written, add the following line to the end of the file:
+export PATH="$PATH:~/Documents/Languages/C++/Written"
+
+Step 3: Save and Exit
+In nano, press CTRL + X, then Y to confirm changes, and press Enter to save.
+
+Step 4: Reload Your Shell Configuration
+To apply the changes, reload the configuration file:
+For .bashrc:
+source ~/.bashrc
+For .bash_profile:
+source ~/.bash_profile
+For Zsh:
+source ~/.zshrc
+
+Step 5: Verify the Change
+To check if the directory was added to your PATH, run:
+echo $PATH
+You should see your added directory listed.
+
+Step 6: Using the New Path
+Now, any executable or script in ~/Documents/Languages/C++/Written can be run from anywhere in your terminal, for example:
+compile.sh simple.c
+
+By following these steps, you will have successfully added a directory to your PATH, allowing you to easily run scripts and executables from any terminal session.

@@ -1,0 +1,35 @@
+To get the current exchange rate between two currencies such as 'USD' and 'EUR', you can use the 'requests' library in Python to send a GET request to a currency exchange API. Here's an example using the 'exchangerate-api':
+
+import requests
+
+def get_current_exchange_rate(base_currency, target_currency):
+    api_key = 'YOUR_API_KEY'  # replace with your actual API key
+    url = f'https://v6.exchangerate-api.com/v6/{api_key}/latest/{base_currency}'
+    response = requests.get(url)
+    data = response.json()
+    return data['conversion_rates'][target_currency]
+
+rate = get_current_exchange_rate('USD', 'EUR')
+print(rate)
+
+Please note that you need to replace 'YOUR_API_KEY' with your actual API key from 'exchangerate-api'. You can get a free API key by signing up on their website.
+This script will print the current exchange rate from USD to EUR. The data is returned in JSON format.
+Also, remember to handle potential exceptions that might occur while making the HTTP request.
+______________________________
+If you want to get the current exchange rate without using an API key, you can use web scraping. However, please note that web scraping should be done in accordance with the website's terms of service.
+Here's an example of how you can use BeautifulSoup and requests to scrape exchange rate data from X-Rates.com:
+
+from bs4 import BeautifulSoup
+import requests
+def get_current_exchange_rate(base_currency, target_currency):
+    url = f"https://www.x-rates.com/calculator/?from={base_currency}&to={target_currency}&amount=1"
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    rate = soup.find('span', {'class': 'ccOutputTrail'}).previous_sibling
+    return float(rate.replace(',', ''))
+
+rate = get_current_exchange_rate('USD', 'EUR')
+print(rate)
+
+This script sends a GET request to X-Rates.com for the exchange rate from USD to EUR, parses the HTML response to find the exchange rate, and prints it.
+Please note that this is just an example and the actual implementation may vary depending on the structure of the website. Also, the website's structure can change over time, which may break this script. Always make sure to respect the website's terms of service when web scraping.

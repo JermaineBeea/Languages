@@ -1,0 +1,18 @@
+import numpy as np
+
+# Sample 2D array
+arr = np.array([[1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]])
+
+# Define a custom function to calculate the range (max - min)
+def calc_range(a):
+    return np.max(a) - np.min(a)
+
+# Apply the function along rows (axis=1)
+row_ranges = np.apply_along_axis(calc_range, axis=1, arr)
+print("Range across rows:", row_ranges)
+
+# Apply the function along columns (axis=0)
+col_ranges = np.apply_along_axis(calc_range, axis=0, arr)
+print("Range across columns:", col_ranges)

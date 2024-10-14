@@ -1,0 +1,5 @@
+use yield instead of return to turn generateExclude into a generator function, allowing it to generate multiple values. Here's the corrected code:
+
+def generateExclude (exclude, start = 0, end = 10, change = 1):
+    for n in [n for n in range(start, end, change) if n not in exclude]:
+      yield n

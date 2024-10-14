@@ -1,0 +1,46 @@
+Here are some of the commonly used methods and attributes in the `pathlib` module in Python:
+This is not an exhaustive list. The `pathlib` module has more methods and attributes. You can find the complete list in the [Python documentation](https://docs.python.org/3/library/pathlib.html).
+
+1. `Path.cwd()`: Returns the current working directory as a new path object.
+2. `Path.home()`: Returns the home directory as a new path object.
+3. `Path.stat()`: Returns information about the path.
+4. `Path.chmod()`: Changes the permissions of the path.
+5. `Path.glob()`: Returns a generator that yields the paths matching a pattern.
+6. `Path.mkdir()`: Creates a new directory at the path.
+7. `Path.rename()`: Renames the file or directory to the given target.
+8. `Path.rmdir()`: Removes the directory. The directory must be empty.
+9. `Path.unlink()`: Removes the file or symbolic link.
+10. `Path.touch()`: Creates a new file at the path, or updates the mtime and atime of an existing file.
+11. `Path.open()`: Opens the file pointed by the path and returns a file object.
+12. `Path.resolve()`: Makes the path absolute, resolving any symlinks.
+13. `Path.is_dir()`: Returns True if the path points to a directory, False otherwise.
+14. `Path.is_file()`: Returns True if the path points to a regular file, False otherwise.
+15. `Path.is_symlink()`: Returns True if the path points to a symbolic link, False otherwise.
+16. `Path.exists()`: Returns True if the path exists, False otherwise.
+17. `Path.parent`: Returns the logical parent of the path.
+18. `Path.name`: Returns the final path component, if any.
+19. `Path.stem`: Returns the final path component, without its suffix.
+20. `Path.suffix`: Returns the file extension, if any.
+21. `Path.parts`: Returns the components of the path.
+
+1. `Path.absolute()`: Returns an absolute version of this path. This function works even if the path doesn’t point to anything.
+2. `Path.as_posix()`: Return the string representation of the path with forward (/) slashes.
+3. `Path.as_uri()`: Convert the path to a file URI.
+4. `Path.is_absolute()`: Check whether the path is absolute or not.
+5. `Path.is_reserved()`: Check whether the path is a reserved name on Windows.
+6. `Path.is_socket()`: Check whether the path is a Unix socket.
+7. `Path.is_block_device()`: Check whether the path is a block device.
+8. `Path.is_char_device()`: Check whether the path is a character device.
+9. `Path.is_fifo()`: Check whether the path is a FIFO.
+10. `Path.iterdir()`: Iterate over the files in this directory. Does not yield any result for the special files '.' and '..'.
+11. `Path.joinpath()`: Combine this path with one or several arguments, and return a new path representing either a subpath (if all arguments are relative paths) or a totally different path (if one of the arguments is an absolute path).
+12. `Path.match()`: Return True if this path matches the given pattern.
+13. `Path.relative_to()`: Compute a relative path to another path.
+14. `Path.symlink_to()`: Make this path a symbolic link to the given path. This method can create either regular files or directories.
+15. `Path.with_name()`: Return a new path with the name changed.
+16. `Path.with_suffix()`: Return a new path with the suffix changed. If the original path doesn’t have a suffix, the new suffix is appended instead.
+17. `Path.with_stem()`: Return a new path with the stem changed. This method is only available on concrete paths.
+18. `Path.drive`: The drive prefix (letter or name) of the path, if any.
+19. `Path.anchor`: The concatenation of the drive and root, or ''.
+20. `Path.parents`: A sequence of this path’s logical parents.
+

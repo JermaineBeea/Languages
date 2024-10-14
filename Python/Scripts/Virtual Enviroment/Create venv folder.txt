@@ -1,0 +1,25 @@
+To get the current exchange rate between two currencies such as 'USD' and 'EUR', you can use the 'requests' library in Python to send a GET request to a currency exchange API. Here's an example using the 'exchangerate-api':
+
+```python
+import requests
+
+def get_current_exchange_rate(base_currency, target_currency):
+    api_key = 'YOUR_API_KEY'  # replace with your actual
+
+ API
+
+ key
+    url = f'https://v6.exchangerate-api.com/v6/{api_key}/latest/{base_currency}'
+    response = requests.get(url)
+    data = response.json()
+    return data['conversion_rates'][target_currency]
+
+rate = get_current_exchange_rate('USD', 'EUR')
+print(rate)
+```
+
+Please note that you need to replace `'YOUR_API_KEY'` with your actual API key from 'exchangerate-api'. You can get a free API key by signing up on their website.
+
+This script will print the current exchange rate from USD to EUR. The data is returned in JSON format.
+
+Also, remember to handle potential exceptions that might occur while making the HTTP request.

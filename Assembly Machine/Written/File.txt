@@ -1,0 +1,43 @@
+section .data
+    hello db 'Hello, World!', 0
+
+section .text
+    global _start
+
+_start:
+    ; write the message to stdout
+    mov rax, 1        ; syscall: write
+    mov rdi, 1        ; file descriptor: stdout
+    mov rsi, hello    ; pointer to the message
+    mov rdx, 13       ; message length
+    syscall
+
+    ; exit the program
+    mov rax, 60       ; syscall: exit
+    xor rdi, rdi      ; exit code 0
+    syscall
+
+***
+Save this code in a file named hello64.s, and then assemble and link it as explained in the previous response. Compile and run the program to see the "Hello, World!" message printed to the console.
+as -o hello64.o hello64.s *** s or asm file extension
+
+Link the Object File:
+
+Link the object file using the GNU Linker (ld):
+ld -o hello64 hello64.o
+Compile and Run the Program:
+
+Execute the compiled program:
+./hello64
+
+# Save the assembly code in a file named hello64.s
+echo -e "section .data\n    hello db 'Hello, World!', 0\n\nsection .text\n    global _start\n\n_start:\n    ; write the message to stdout\n    mov rax, 1        ; syscall: write\n    mov rdi, 1        ; file descriptor: stdout\n    mov rsi, hello    ; pointer to the message\n    mov rdx, 13       ; message length\n    syscall\n\n    ; exit the program\n    mov rax, 60       ; syscall: exit\n    xor rdi, rdi      ; exit code 0\n    syscall" > hello64.s
+
+# Assemble the code
+as -o hello64.o hello64.s
+
+# Link the object file
+ld -o hello64 hello64.o
+
+# Compile and run the program
+./hello64

@@ -1,0 +1,7 @@
+import random
+print(random.sample(range(1, 100), 10))  # Outputs: [30, 83, 32, 61, 19, 88, 67, 14, 76, 8]
+random.sample(population, k): This function returns a list of k unique elements chosen from the population sequence (or set). This is a sampling without replacement, meaning once an element is chosen, it's not included in the pool of possible choices for subsequent picks.
+
+import random
+print(random.choice(range(1, 100)))  # Outputs: 42 (for example)
+If you need to pick multiple elements and you don't want to pick the same element more than once, use random.sample. If you're just picking one element, or if you want to allow picking the same element multiple times, use random.choice.

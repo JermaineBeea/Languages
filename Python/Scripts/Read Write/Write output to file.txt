@@ -1,0 +1,2 @@
+python time.py > output.txt ### write
+python time.py >> output.txt #### append file

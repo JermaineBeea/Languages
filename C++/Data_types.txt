@@ -1,0 +1,78 @@
+Here's an expanded version of your table that includes format specifiers for Unicode characters, hexadecimal values, and additional types you might find useful in C:
+
+### Format Specifiers in C
+
+| **Data Type**                      | **Format Specifier** | **Example**                                           |
+|------------------------------------|----------------------|-------------------------------------------------------|
+| `int`                              | `%d` or `%i`         | `printf("%d", myInt);`                               |
+| `float`                            | `%f`                 | `printf("%f", myFloat);`                             |
+| `double`                           | `%lf`                | `printf("%lf", myDouble);`                           |
+| `char`                             | `%c`                 | `printf("%c", myChar);`                             |
+| `char[]` (string)                 | `%s`                 | `printf("%s", myString);`                            |
+| `bool` (from `stdbool.h`)         | `%d`                 | `printf("%d", myBool);` (`1` for `true`, `0` for `false`) |
+| `unsigned int`                     | `%u`                 | `printf("%u", myUnsignedInt);`                       |
+| `long int`                         | `%ld`                | `printf("%ld", myLongInt);`                          |
+| `long long int`                    | `%lld`               | `printf("%lld", myLongLongInt);`                     |
+| `unsigned long`                    | `%lu`                | `printf("%lu", myUnsignedLong);`                     |
+| `unsigned long long`               | `%llu`               | `printf("%llu", myUnsignedLongLong);`                |
+| `pointer`                          | `%p`                 | `printf("%p", myPointer);`                           |
+| **Unicode (wide character)**       | `%lc`                | `printf("%lc", myWideChar);`                         |
+| **Hexadecimal (int)**              | `%x` or `%X`        | `printf("%x", myInt);` (lowercase/uppercase)        |
+| **Octal (int)**                    | `%o`                 | `printf("%o", myInt);`                               |
+| **Scientific notation (float/double)** | `%e` or `%E`    | `printf("%e", myFloat);`                             |
+
+### Example Usage:
+
+Here’s a complete example demonstrating various format specifiers:
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+#include <wchar.h>
+#include <locale.h>
+
+int main() {
+    // Set locale for wide characters
+    setlocale(LC_ALL, "");
+
+    int a = 10;
+    float b = 5.5;
+    double c = 123.456;
+    char d = 'A';
+    char str[] = "Hello";
+    bool e = true;
+    unsigned int f = 42;
+    long int g = 1234567890;
+    long long int h = 1234567890123456789;
+    wchar_t unicodeChar = L'あ'; // Example Unicode character
+
+    printf("Integer: %d\n", a);                         // For int
+    printf("Float: %f\n", b);                           // For float
+    printf("Double: %lf\n", c);                         // For double
+    printf("Character: %c\n", d);                       // For char
+    printf("String: %s\n", str);                        // For string
+    printf("Boolean: %d\n", e);                         // For bool (prints 1 or 0)
+    printf("Unsigned Integer: %u\n", f);                // For unsigned int
+    printf("Long Integer: %ld\n", g);                   // For long int
+    printf("Long Long Integer: %lld\n", h);             // For long long int
+    printf("Unicode Character: %lc\n", unicodeChar);    // For wide character
+    printf("Hexadecimal: %x\n", a);                     // For hexadecimal
+    printf("Octal: %o\n", a);                            // For octal
+    printf("Scientific Notation: %e\n", b);             // For scientific notation
+
+    return 0;
+}
+```
+
+### Compiling and Running
+
+You can compile and run this program as follows:
+
+```bash
+gcc -o format_specifiers_example format_specifiers_example.c -fexec-charset=UTF-8
+./format_specifiers_example
+```
+
+This will print the values of various types, demonstrating the corresponding format specifiers.
+
+Let me know if you need any further clarification or additional information!

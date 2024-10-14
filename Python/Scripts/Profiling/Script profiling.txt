@@ -1,0 +1,50 @@
+
+1. **cProfile**: This is a built-in module in Python that can be used for profiling Python programs. It provides a function-level breakdown of execution time.
+
+   Usage:
+   ```python
+   import cProfile
+   cProfile.run('your_function()')
+   ```
+
+2. **timeit**: This is another built-in module in Python. It's used for timing small bits of Python code. It has both command-line interface and a callable one.
+
+   Usage:
+   ```python
+   import timeit
+   print(timeit.timeit('your_function()', globals=globals()))
+   ```
+
+3. **memory_profiler**: This is a third-party module that provides detailed reports on memory usage. It's not built into Python and needs to be installed separately.
+
+   Usage:
+   ```python
+   from memory_profiler import profile
+
+   @profile
+   def your_function():
+       ...
+   ```
+
+4. **line_profiler**: This is another third-party module that provides line-by-line breakdowns of execution time. It's not built into Python and needs to be installed separately.
+
+   Usage:
+   ```python
+   from line_profiler import LineProfiler
+
+   def your_function():
+       ...
+
+   profiler = LineProfiler()
+   profiler.add_function(your_function)
+   profiler.run('your_function()')
+   profiler.print_stats()
+   ```
+
+5. **py-spy**: This is a sampling profiler for Python programs. It lets you visualize what your Python program is spending time on without restarting the program.
+
+6. **Py-Spy**: A sampling profiler for Python programs. It lets you visualize what your Python program is spending time on without restarting the program.
+
+7. **Yappi**: Yet Another Python Profiler, but this time thread&coroutine&greenlet aware.
+
+Remember to choose the right tool based on your specific needs. Some tools are better suited for certain tasks than others.

@@ -1,0 +1,17 @@
+# time_1 = time.time()
+# time_2 = np.datetime64('now')
+# time_3 = np.datetime64('now','s')
+# time_4 = time.perf_counter()
+# time_5 = time.process_time()
+
+Sure, here's an explanation for each line:
+
+1. `time_1 = time.time()`: This line gets the current time in seconds since the Epoch (January 1, 1970 00:00:00 (UTC)). The value is a floating point number representing time in seconds.
+
+2. `time_2 = np.datetime64('now')`: This line uses NumPy's `datetime64` function to get the current date and time down to the nanosecond. The result is a `datetime64` object.
+
+3. `time_3 = np.datetime64('now','s')`: This line is similar to the previous one, but it specifies a unit of 's' for seconds. This means the `datetime64` object will only be accurate down to the second.
+
+4. `time_4 = time.perf_counter()`: This line gets a high-resolution timer that includes time elapsed during sleep. It's useful for benchmarking code because it's the most precise timer available in Python.
+
+5. `time_5 = time.process_time()`: This line gets the current process time in seconds since the start of the process. It does not include time elapsed during sleep. It's useful for timing CPU-intensive tasks because it only includes the time your process was actually running.

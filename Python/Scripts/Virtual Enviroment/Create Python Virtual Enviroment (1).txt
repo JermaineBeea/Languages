@@ -1,0 +1,7 @@
+Here's the correct command to create a virtual environment in Python:
+-python -m venv 'path/to/new/virtual/environment'
+-Replace /path/to/new/virtual/environment with the path where you want to create the virtual environment. This will create a new directory at that location with the virtual environment files.
+
+If you want to create the virtual environment in the current directory, you can use:
+-python3 -m venv ./venv
+-This will create a new directory called venv in the current directory. If the directory is not being created, make sure you have the necessary permissions and that your Python installation is working correctly.

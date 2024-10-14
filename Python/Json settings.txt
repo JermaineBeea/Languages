@@ -1,0 +1,26 @@
+{
+    "files.autoSave": "afterDelay",
+    "workbench.colorTheme": "Visual Studio Dark",
+    "editor.tabSize": 2,
+    "editor.fontFamily": "Consolas", // Add this line to change the font style
+    "editor.fontSize": 13, // Add this line to change the font size
+    "workbench.colorCustomizations": {
+        
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "",
+                "settings": {
+                    "foreground":"#FFFFFF"
+                }
+            }
+        ]
+    },
+    "editor.language.colorizedBracketPairs": [
+        
+    ],
+    "code-runner.runInTerminal": true,
+    "editor.minimap.enabled": false,
+    "workbench.startupEditor": "none"
+}

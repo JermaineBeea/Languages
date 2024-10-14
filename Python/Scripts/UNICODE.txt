@@ -1,0 +1,4 @@
+Print letters a-> z
+a = ord('a')
+alph = [chr(n) for n in range(a, a +26)]
+print(alph)

@@ -1,0 +1,122 @@
+Creating a Bash Function
+
+A Bash function is defined with the following syntax:
+
+    bash
+    function_name() {
+    # Commands to be executed
+    }
+
+Alternatively, you can use the function keyword:
+
+    bash
+    function function_name {
+    # Commands to be executed
+    }
+
+
+To see all functions created in your current shell session, you can use the following methods:
+
+1. Using declare -f
+This command lists all functions that are currently defined in the shell session, along with their definitions:
+
+    bash
+    declare -f
+
+2. Using compgen -A function
+This command lists only the names of all functions defined in the current shell session:
+
+    bash
+    compgen -A function
+
+3. Using typeset -f (for older shells)
+In some older versions of Bash or different shells, you might use typeset -f:
+
+    bash
+    typeset -f
+
+Creating a function in a bash file (extension.sh)
+
+    push_repo() {
+    local repo_path="$1"
+    local commit_message="$2"
+    
+    cd "$repo_path" || { echo "Failed to change directory to $repo_path"; exit 1; }
+    git add .
+    git commit -m "$commit_message"
+    git push
+    }
+
+    How to Use This Function
+
+        1.Define the Function: Add the function definition to your .bashrc, .bash_profile, or any other script file you use.
+
+        2. Call the Function:
+        bash
+        push_repo /path/to/your/repo "Your commit message"
+
+        Explanation
+
+        local repo_path="$1" and local commit_message="$2": Assigns the first and second arguments to local variables within the function.
+        cd "$repo_path" || { ... }: Changes to the specified directory and exits with an error message if the directory change fails.
+        git add .: Stages all changes in the repository.
+        git commit -m "$commit_message": Commits the changes with the specified commit message.
+        git push: Pushes the committed changes to the remote repository.
+
+        This function encapsulates the steps to push changes to a Git repository, making it easier to automate or reuse in different scripts.
+
+
+
+
+To add the push_repo function to your Bash environment so that it is available in any terminal session, follow these steps:
+1.Edit Your .bashrc or .bash_profile File
+    The .bashrc file is typically used for interactive shell sessions, while .bash_profile is used for login shells. Most users will want to add functions to .bashrc.
+    You can use a text editor to open .bashrc. For example, with nano:
+
+    bash
+    nano ~/.bashrc
+
+    Or with vim:
+
+    bash
+    vim ~/.bashrc
+
+2. Add the Function Definition
+
+    Scroll to the bottom of the file and add the push_repo function definition:
+
+    bash
+    push_repo() {
+    local repo_path="$1"
+    local commit_message="$2"
+    
+    cd "$repo_path" || { echo "Failed to change directory to $repo_path"; exit 1; }
+    git add .
+    git commit -m "$commit_message"
+    git push
+    }
+
+3. Save and Exit
+
+    In nano, press CTRL + X, then Y to confirm, and Enter to save.
+    In vim, press ESC, type :wq, and press Enter to save and quit.
+
+4. Reload the .bashrc File
+
+    For the changes to take effect, reload your .bashrc file:
+    bash
+    source ~/.bashrc
+
+5. Use the Function
+
+    You can now use the push_repo function in any terminal session:
+
+    bash
+    push_repo /path/to/your/repo "Your commit message"
+
+Additional Notes
+
+    For .bash_profile: If you prefer to use .bash_profile, follow the same steps but edit the .bash_profile file instead. Remember to source it as well with source ~/.bash_profile.
+    Global Availability: If you want the function to be available to all users or across different shells, consider placing it in /etc/profile or /etc/bash.bashrc (on Linux).
+
+This setup ensures that your function is always available in new terminal sessions, making your workflow more efficient.

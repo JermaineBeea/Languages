@@ -1,0 +1,5 @@
+Linux NASM
+/usr/bin/nasm
+# install WSl
+
+Window NASM

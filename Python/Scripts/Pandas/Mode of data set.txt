@@ -1,0 +1,18 @@
+import pandas as pd
+
+# Assuming 'data' is your list of real numbers
+data = [1.1, 2.2, 2.3, 3.4, 3.5, 4.6, 4.7, 4.8]
+
+# Convert the list to a pandas Series
+data_series = pd.Series(data)
+
+# Define the bin edges
+bins = [1, 2, 3, 4, 5]
+
+# Use the cut function to bin the data
+binned_data = pd.cut(data_series, bins)
+
+# Find the mode
+mode = binned_data.mode()[0]
+
+print(mode)

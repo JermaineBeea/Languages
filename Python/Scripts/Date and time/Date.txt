@@ -1,0 +1,12 @@
+from datetime import datetime
+import dateutil.parser  as parse
+
+# Create a datetime object for the current date and time
+now = datetime.now()
+# Format the datetime object as a string
+date_string = now.strftime("%Y-%m-%d %H:%M:%S")
+
+date_object = datetime(2024,12, 1)
+date_string = '12 Jan 2024'
+date_ = parse.parse(date_string)
+date_object = datetime.strftime(date_,'%d %m %Y')

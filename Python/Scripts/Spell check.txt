@@ -1,0 +1,102 @@
+
+Using difflib:  
+import difflib
+
+Load a list of English words:  
+def load_word_list(file_path):  
+    with open(file_path) as f:  
+        words = [line.strip() for line in f]  
+    return words
+
+Find close matches to the input word:  
+def find_closest_word(user_input, word_list, cutoff=0.8):  
+    close_matches = difflib.get_close_matches(user_input, word_list, n=1, cutoff=cutoff)  
+    return close_matches
+
+Load the English word list (download one like `words.txt`):  
+word_list = load_word_list('words.txt')
+
+Example input:  
+user_input = 'pleaassee'
+
+Find the closest English word match (cutoff=0.8 means 80% similarity required):  
+closest_word = find_closest_word(user_input, word_list, cutoff=0.8)
+
+if closest_word:  
+    print(f"The closest English word is: {closest_word[0]}")  
+else:  
+    print("No close match found.")
+
+---
+
+Using SpellChecker:  
+def correct_word(user_input):  
+    spell = SpellChecker()  
+    corrected_word = spell.candidates(user_input)  
+    return corrected_word
+
+user_input = 'makng'  
+possible_corrections = correct_word(user_input)  
+print(f'Possible corrections: {possible_corrections}')
+
+---
+
+Using TextBlob:  
+from textblob import TextBlob
+
+def correct_spelling(user_input):  
+    blob = TextBlob(user_input)  
+    corrected_word = blob.correct()  
+    return corrected_word
+
+user_input = 'makng'  
+corrected_word = correct_spelling(user_input)  
+print(f'Corrected word: {corrected_word}')
+
+---
+
+Using enchant:  
+import enchant
+
+def is_english_word(word):  
+    d = enchant.Dict("en_US")  
+    return d.check(word)
+
+Example usage:  
+word = 'makng'  
+if is_english_word(word):  
+    print(f"'{word}' is an English word.")  
+else:  
+    print(f"'{word}' is not an English word.")
+
+---
+
+Using nltk:  
+import nltk  
+nltk.download('wordnet')  
+from nltk.corpus import wordnet
+
+def is_english_word(word):  
+    return wordnet.synsets(word)
+
+Example usage:  
+word = 'makng'  
+if is_english_word(word):  
+    print(f"'{word}' is an English word.")  
+else:  
+    print(f"'{word}' is not an English word.")
+
+---
+
+Using Levenshtein:  
+import Levenshtein
+
+def find_closest_word(user_input, word_list):  
+    distances = {word: Levenshtein.distance(user_input, word) for word in word_list}  
+    closest_word = min(distances, key=distances.get)  
+    return closest_word
+
+word_list = ['making', 'doing', 'going', 'taking']  
+user_input = 'makng'  
+closest_word = find_closest_word(user_input, word_list)  
+print(f'The closest word is: {closest_word}')

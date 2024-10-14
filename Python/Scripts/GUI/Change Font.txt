@@ -1,0 +1,24 @@
+from IPython.display import display, HTML
+
+# Define your variable
+my_var = "Hello, world!"
+
+# Display it with a specific font using HTML
+display(HTML(f"<p style='font-family:serif;'>{my_var}</p>"))
+
+import tkinter as tk
+from tkinter import font
+
+root = tk.Tk()
+
+# Define your variable
+my_var = "Hello, world!"
+
+# Create a font
+my_font = font.Font(family="Helvetica", size=14, weight="bold", slant="italic")
+
+# Create a label with that font
+label = tk.Label(root, text=my_var, font=my_font)
+label.pack()
+
+root.mainloop()

@@ -1,0 +1,19 @@
+#NB INSTALL CYTHON PACKAGE AND C++ MICROSOFT VISUAL STUDIO TOOLS- https://visualstudio.microsoft.com/visual-cpp-build-tools/
+# NEED C/C++  COMPILER AND CYTHON EXTENSION
+# downlaod -sudo apt-get install python3-dev
+
+To run this code, you need to compile it with Cython. Here's a basic example of how you can do this:
+
+Save your code in a .pyx file, for example filterfunc.pyx.
+**Create a setup.py file in the same directory with the following content:**
+**CREATE A FILE NAMED FILENAME.PYX AND EMBED NAME TO TO SETUP FILE**
+
+SETUPFILE
+from setuptools import setup
+from Cython.Build import cythonize
+
+setup(
+    ext_modules = cythonize("FILENAME.pyx")->IMBEDDED FILENAME
+)
+
+Run the following command in your terminal: python setup.py build_ext --inplace

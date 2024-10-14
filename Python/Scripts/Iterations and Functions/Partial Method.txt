@@ -1,0 +1,9 @@
+The partial function from the functools module in Python allows you to create a new version of a function with some arguments fixed (i.e., pre-set). This is especially useful in cases where a function takes multiple arguments, but you want to supply only some of them while delaying others for later.
+Basic Explanation of partial
+
+    It allows you to "partially apply" a function by pre-setting some of its arguments.
+    The returned function can be called later with the remaining arguments.
+
+Example of partial in Use
+
+In your specific case, you want each button to call button1 with a different argument n, but you don’t want to call button1 immediately when creating the buttons. The partial function helps by creating a callable that "remembers" the value of n and waits to be called by the button's command later.

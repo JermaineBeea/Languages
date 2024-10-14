@@ -1,0 +1,53 @@
+import matplotlib.pyplot as plt
+
+If you want to change the scale of the x or y axis (not the size), you can use the xlim and ylim functions:
+plt.xlim([xmin, xmax])
+plt.ylim([ymin, ymax])
+
+
+# Assuming y are your data
+y = [2, 3, 5, 7, 11]
+plt.plot(y)
+plt.axhline(y=3, color='r', linestyle='--')
+plt.show()
+
+start_x = start_index + 1
+x = np.arange(start_x, start_x + len(data))
+plt.plot(x,forecasts.T, color = 'lightgrey')
+plt.plot(x,applied_data.T, color = 'blue')
+
+# Plot data
+plt.plot(np.array(tsla_data), color = 'green')
+for val in data_distribution:
+    plt.hlines(y=val, xmin=start_x, xmax=start_x + len(data), color='red')
+plt.show()
+
+# Assuming data is your list of sub-arrays
+data = [[1, 2, 3, 4, 5], [2, 3, 4, 5, 6], [3, 4, 5, 6, 7]]
+colors = ['r', 'g', 'b']
+for i, sub_array in enumerate(data):
+    plt.plot(sub_array, color=colors[i])
+plt.show()
+
+import random
+# Assuming data is your list of sub-arrays
+data = [[1, 2, 3, 4, 5], [2, 3, 4, 5, 6], [3, 4, 5, 6, 7]]
+for sub_array in data:
+    random_color = (random.random(), random.random(), random.random())
+    plt.plot(sub_array, color=random_color)
+plt.show()
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Your plot code here
+plt.plot([1, 2, 3, 4, 5], [2, 3, 5, 7, 11])
+# Set labels for x and y axes
+plt.xlabel('Your X Label')
+plt.ylabel('Your Y Label')
+# Set tick locations
+x_ticks = np.linspace(start=1, stop=5, num=5)
+y_ticks = np.linspace(start=2, stop=11, num=10)
+plt.xticks(x_ticks)
+plt.yticks(y_ticks)
+plt.show()

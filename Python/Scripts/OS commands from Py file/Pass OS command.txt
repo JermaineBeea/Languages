@@ -1,0 +1,4 @@
+import subprocess
+
+command = "New-Item -Path 'C:\\path\\to\\your\\directory' -ItemType Directory"
+subprocess.run(['powershell', '-Command', command], check=True)

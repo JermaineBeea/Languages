@@ -1,0 +1,30 @@
+PACKAGES______
+Data Visulisation Packages
+-Bokeh
+-Plotly
+-Matplolib
+
+Find available version of pakage
+-pip index versions kiwisolver
+-pip search kiwisolver
+
+Display info about installed package
+-python -c "import numpy; print(numpy.__version__)"
+-pip show numpy
+
+Clear cache
+-pip cache purge
+
+To download requirment file
+-pip freeze > requirements.txt
+-pip install -r requirements.txt
+
+
+PYTHON ENVIROMENT_______
+Here's the correct command to create a virtual environment in Python:
+-python -m venv 'path'
+-Replace 'path' with the path where you want to create the virtual environment. This will create a new directory at that location with the virtual environment files.
+
+To activate enviroment
+-path\scripts activate
+-'Deactivate' to deactivate enviroment

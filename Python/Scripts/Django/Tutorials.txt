@@ -1,0 +1,12 @@
+f this is your first time using Django, you’ll have to take care of some initial setup. Namely, you’ll need to auto-generate some code that establishes a Django project – a collection of settings for an instance of Django, including database configuration, Django-specific options and application-specific settings.
+
+From the command line, cd into a directory where you’d like to store your code and create a new directory named djangotutorial. (This directory name doesn’t matter to Django; you can rename it to anything you like.)
+/ 
+
+$ mkdir djangotutorial
+
+Then, run the following command to bootstrap a new Django project:
+/ 
+
+$ django-admin startproject mysite djangotutorial
+

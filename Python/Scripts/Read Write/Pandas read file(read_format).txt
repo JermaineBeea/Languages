@@ -1,0 +1,24 @@
+with open('_filename(path)_,'read/write/app') as file:
+arra=files.readlines()
+
+
+Pandas provides several functions to read data in different formats. Here are some of them:
+
+read_csv(): Read a comma-separated values (csv) file into DataFrame.
+read_excel(): Read an Excel file into a pandas DataFrame.
+read_hdf(): Read from the store, close it if we opened it.
+read_sql(): Read SQL query or database table into a DataFrame.
+read_json(): Convert a JSON string to pandas object.
+read_html(): Read HTML tables into a list of DataFrame objects.
+read_clipboard(): Read text from clipboard and pass to read_csv.
+read_parquet(): Load a parquet object from the file path, returning a DataFrame.
+read_orc(): Load an ORC object from the file path, returning a DataFrame.
+read_feather(): Load a feather-format object from the file path.
+read_gbq(): Load data from Google BigQuery.
+read_stata(): Read Stata file into DataFrame.
+read_sas(): Read SAS files stored as either XPORT or SAS7BDAT format files.
+read_spss(): Load an SPSS file from the file path, returning a DataFrame.
+read_pickle(): Load pickled pandas object (or any object) from file.
+read_fwf(): Read a table of fixed-width formatted lines into DataFrame.
+read_sql_query(): Read SQL query into a DataFrame.
+read_sql_table(): Read SQL database table into a DataFrame.

@@ -1,0 +1,118 @@
+CHANGE PASSWORD
+    passwd __username__
+    username: teblinux
+    password: teblinux
+
+CHANGE AND VIEW DIRECTORY
+    cd..# Gi back to main directory
+    ls # View contents of directory
+
+DELETE/REMOVE
+    rmdir - remove directory
+    If You Want To Force The Deletion Without Any Prompts (Use With Caution), You Can Use The -F (Force) Flag:
+    rm -f /path/to/file
+    rm -rf /path/to/folder
+    If Django was installed using apt:
+
+    Remove Program
+        sudo apt remove python3-django
+
+        After it's removed, you can also clean up any unused dependencies with:
+
+        sudo apt autoremove
+
+
+Important Note
+Use with Caution: This command will permanently delete all files and directories within the specified folder without any confirmation. Make sure you specify the correct path.
+If you want to delete hidden files (those that start with a dot), you can use:
+
+rm -r /path/to/your/folder/{*,.*}
+rem * IF in currect directory
+
+If you want a safer approach to ensure you don't accidentally delete something important, you can use the -i option, which prompts you for confirmation before deleting each item:
+rm -ri /mnt/c/users/Work/OneDrive/Programming/Workspaces/*
+rm -ri /mnt/c/users/Work/OneDrive/Programming/Workspaces/.*
+
+
+OPEN/VIEW FILE
+    open 'file' # view contents of file
+    cat 'file' # Open contents of file in terminal
+
+CLEAR
+    clear or type 'ctrl + l' # claer terminal
+
+OVERWRITE (KEEP SOURCE FILE)
+    cp -f source_file destination_file
+
+OVERWRITE (DELETE SOURCE FILE)
+    mv -f source_file destination_file
+
+Remove Pdf password
+    qpdf --decrypt --password=1234 secured.pdf unsecured.pdf
+
+
+To create a file with specific contents directly from the bash terminal, you can use several methods. Here are a few common approaches:
+    1. Using echo and Redirection
+    You can use the echo command along with redirection to create a file and add contents to it:
+
+        bash
+        echo '_version = 0.1
+
+        [hello-world]
+        activity_id = "fun-ex-hello-world"' > .lms/exercises.toml
+
+    2. Using cat with Redirection
+    You can use cat to create a file and then type the contents interactively. After typing your content, press Ctrl+D to save:
+
+        bash
+        cat > .lms/exercises.toml <<EOL
+        _version = 0.1
+
+        [hello-world]
+        activity_id = "fun-ex-hello-world"
+        EOL
+
+    3. Using printf
+    printf can be used for more complex formatting:
+
+        bash
+        printf '_version = 0.1\n\n[hello-world]\nactivity_id = "fun-ex-hello-world"\n' > .lms/exercises.toml
+
+    4. Using tee
+    tee is useful if you want to create a file and also see the output on the terminal:
+    bash
+    printf '_version = 0.1\n\n[hello-world]\nactivity_id = "fun-ex-hello-world"\n' | tee .lms/exercises.toml
+
+
+The touch command is used in Unix-like operating systems (like Linux and macOS) to create an empty file or update the timestamp of an existing file. Here's a breakdown of its uses:
+Creating an Empty File
+
+If you want to create a new, empty file, you can use:
+    bash
+    touch filename.txt
+
+    This will create an empty file named filename.txt in the current directory if it doesn't already exist. If the file does exist, touch will update its modification timestamp to the current time.
+
+If a file already exists, touch will update its access and modification timestamps to the current time without altering the file’s content.
+Create a New File
+    bash
+    touch newfile.txt
+
+Update the Timestamp of an Existing File
+    bash
+    touch existingfile.txt
+
+Create Multiple Files at Once
+    bash
+    touch file1.txt file2.txt file3.txt
+
+Set a Specific Timestamp You can also set a specific timestamp using the -t option:
+    bash
+    touch -t 202309150830.55 filename.txt
+
+This sets the timestamp to September 15, 2023, 08:30:55.
+Notes
+    touch does not create directories; it only works with files.
+    If you need to create multiple directories, you might use mkdir instead.
+
+

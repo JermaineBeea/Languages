@@ -1,0 +1,21 @@
+import pandas as pd
+
+df = pd.DataFrame({
+    'A': [1, 2, 3],
+    'B': [10, 20, 30],
+})
+
+# Apply a function to each element in the DataFrame
+df = df.applymap(lambda x: x * 2)
+
+# Apply a function to each column in the DataFrame
+df['C'] = df.apply(lambda row: row['A'] + row['B'], axis=1)
+
+# Apply a function to each row in the DataFrame
+total = df.apply(lambda col: col.sum(), axis=0)
+
+# Apply a function to a specific column in the DataFrame
+df['A'] = df['A'].apply(lambda x: x * 2)
+
+# Apply a function that returns a Series to each row in the DataFrame
+df[['D', 'E']] = df.apply(lambda row: pd.Series([row['A'] * 2, row['B'] * 3]), axis=1)

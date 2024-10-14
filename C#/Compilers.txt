@@ -1,0 +1,4 @@
+Dotnet Frameowrk
+C:\Program Files\dotnet
+Enviroment Variables
+C:\Program Files\dotnet\sdk\8.0.303\Roslyn\bincore

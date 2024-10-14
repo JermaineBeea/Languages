@@ -1,0 +1,24 @@
+// int** subarray = (int**)malloc(subsize* sizeof(int*));
+// for(int i = 0; i < subsize; i++) {
+//   subarray[i] = (int*)malloc(2 * sizeof(int));
+// }
+
+
+// Allocate memory for the rows
+int** subarray = malloc(size * sizeof(int*));
+
+// Check if the memory was allocated successfully
+if(subarray == NULL) {
+    fprintf(stderr, "Out of memory\n");
+    exit(1);
+}
+
+// Allocate memory for each row
+for(int i = 0; i < size; i++) {
+    subarray[i] = malloc(mult * sizeof(int));
+    // Check if the memory was allocated successfully
+    if(subarray[i] == NULL) {
+        fprintf(stderr, "Out of memory\n");
+        exit(1);
+    }
+}

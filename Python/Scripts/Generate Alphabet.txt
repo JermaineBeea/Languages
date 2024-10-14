@@ -1,0 +1,16 @@
+import string
+
+# Lowercase alphabet
+lowercase_alphabet = string.ascii_lowercase
+print(lowercase_alphabet)
+
+# Uppercase alphabet
+uppercase_alphabet = string.ascii_uppercase
+print(uppercase_alphabet)
+
+UNICODE
+char_variable = 'a'
+uni_code = unicode(char_variable)
+
+code = 101
+character = chr(code)

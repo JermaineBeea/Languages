@@ -1,0 +1,9 @@
+Rustc - https://www.rust-lang.org/tools/install
+rustup self uninstall
+
+RUST
+C:\Users\tebne\AppData\Roaming\Rust\.cargo\bin\rustc.exe
+RustUp-folder-C:\Users\tebne\.rustup ***DO NOT MOVE/DELETE
+
+ENVIROMENT VARIABLES
+C:\Users\tebne\AppData\Roaming\Rust\.cargo\bin

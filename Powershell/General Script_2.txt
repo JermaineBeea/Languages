@@ -1,0 +1,32 @@
+FIND FILE
+dir 'file' s/b
+pip list | findstr 'package-name'
+where 'program name'
+
+Get-ChildItem -Path C:\ -Recurse -Filter "myFile.txt" -ErrorAction SilentlyContinue
+This command will search for a file named "myFile.txt" starting from the root directory (C:\). The -Recurse parameter tells it to search in all subdirectories. The -ErrorAction SilentlyContinue parameter tells it to suppress error messages (like access denied errors)
+
+MOVE FILE
+move <source file path> <destination directory path>
+
+ZIPFILE
+tar -a -c -f MyFiles.zip MyFiles
+**Use the tar command with the following options:***
+a for automatically detecting archive format (ZIP in this case)
+c for creating a new archive
+f to specify the filename
+-v for verbose output (optional)
+
+tar -czf Installers.zip Installers
+
+c: Create a new archive.
+z: Compress the archive using gzip.
+f: Specify the archive filename.
+
+zip -r Installers.zip Installers
+
+CREATE FILE
+type nul > filename.txt
+
+download wsl
+wsl --install

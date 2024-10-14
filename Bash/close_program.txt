@@ -1,0 +1,11 @@
+ps aux | grep firefox   # Find the PID of Firefox
+kill 1234               # Replace 1234 with the actual PID
+
+
+Alternative: Close from Terminal with pkill
+If you know the name of the program, you can also use pkill:
+pkill myprogram
+
+
+Or for a forceful termination:
+pkill -9 myprogram

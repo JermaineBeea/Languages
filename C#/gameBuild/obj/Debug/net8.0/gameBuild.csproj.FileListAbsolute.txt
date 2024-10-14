@@ -1,0 +1,5 @@
+C:\Users\Work\OneDrive\Programming\Languages\C#\gameBuild\obj\Debug\net8.0\gameBuild.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Work\OneDrive\Programming\Languages\C#\gameBuild\obj\Debug\net8.0\gameBuild.AssemblyInfoInputs.cache
+C:\Users\Work\OneDrive\Programming\Languages\C#\gameBuild\obj\Debug\net8.0\gameBuild.AssemblyInfo.cs
+C:\Users\Work\OneDrive\Programming\Languages\C#\gameBuild\obj\Debug\net8.0\gameBuild.csproj.CoreCompileInputs.cache
+C:\Users\Work\OneDrive\Programming\Languages\C#\gameBuild\obj\Debug\net8.0\gameBuild.sourcelink.json

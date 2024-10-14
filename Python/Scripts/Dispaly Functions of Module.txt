@@ -1,0 +1,8 @@
+import inspect
+import IdMod
+
+print(dir(IdMod))
+
+functions_list = inspect.getmembers(IdMod, inspect.isfunction)
+for func in functions_list:
+    print(func[0])  # This will print just the function names

@@ -1,0 +1,54 @@
+In Bash (the default shell for many Linux distributions and macOS), you can run two commands one after the other using similar operators to those in Windows Terminal:
+
+1. Using ; (Run regardless of success)
+If you want to run two commands one after the other regardless of whether the first command succeeds or fails, you can use the ; operator.
+
+Example:
+
+bash
+Copy code
+command1; command2
+2. Using && (Run if the first command succeeds)
+If you want to run the second command only if the first command is successful (returns an exit status of 0), you can use the && operator.
+
+Example:
+
+bash
+Copy code
+command1 && command2
+3. Using || (Run if the first command fails)
+If you want to run the second command only if the first command fails (returns a non-zero exit status), you can use the || operator.
+
+Example:
+
+bash
+Copy code
+command1 || command2
+Example Commands
+Here are some examples using these operators:
+
+Using ;:
+
+bash
+Copy code
+echo "This is the first command"; echo "This is the second command"
+Using &&:
+
+bash
+Copy code
+mkdir example_directory && cd example_directory
+Using ||:
+
+bash
+Copy code
+rm non_existent_file || echo "The file does not exist"
+
+Summary
+Use ; to run both commands regardless of the first command's success.
+Use && to run the second command only if the first command is successful.
+Use || to run the second command only if the first command fails.
+
+
+
+
+

@@ -1,0 +1,11 @@
+Python
+py/PYTHON filename
+Create excecutable file cd-C:\Users\YourName\Documents>pyinstaller --onefile my_script.py
+
+C/C++  
+gcc/g++ filename -o filename 
+Run executable file- filename or ./filename
+
+Rust
+rustc filename
+Run executable file- filename

@@ -1,0 +1,21 @@
+import sys
+sys.path.append("..")
+sys.path.insert(0, 'C:\\Users\\tebne\\OneDrive\\Programming\\Written\\Defined_')
+
+# Get directory of current file
+import os
+current_file_path = os.path.realpath(__file__)
+current_directory = os.path.dirname(current_file_path)
+
+# Stock/Forex
+import yfinance as yf
+from forex_python.converter import CurrencyRates
+
+#Create date object/parse date string into date object
+from datetime import datetime
+import dateutil.parser  as parse
+
+### to use diplay as supposed to print
+import IPython.display as display
+
+

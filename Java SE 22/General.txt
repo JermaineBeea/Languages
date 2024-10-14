@@ -1,0 +1,19 @@
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int n = 5; // Number of elements in the array
+        
+        char[] alphabetArray = new char[n]; // Create a new char array with length n
+        
+        // Populate alphabetArray
+        for (int i = 0; i < n; i++) {
+            alphabetArray[i] = (char) ('a' + i); // Populate alphabetArray with 'a', 'b', 'c', ...
+        }
+        
+        // Option 1: Using System.arraycopy()
+        char[] set1 = new char[n];
+        System.arraycopy(alphabetArray, 0, set1, 0, n);
+        
+        // Option 2: Using Arrays.copyOf()
+        char[] set2 = Arrays.copyOf(alphabetArray, n);

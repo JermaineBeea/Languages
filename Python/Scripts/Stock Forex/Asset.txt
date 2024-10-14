@@ -1,0 +1,36 @@
+The `history` method of a `yfinance.Ticker` object returns a pandas DataFrame that contains the following columns:
+
+- `Open`: The opening price of the stock for each day.
+- `High`: The highest price of the stock for each day.
+- `Low`: The lowest price of the stock for each day.
+- `Close`: The closing price of the stock for each day.
+- `Volume`: The number of shares traded on each day.
+- `Dividends`: The dividend value for the stock for each day.
+- `Stock Splits`: The stock split coefficient for each day.
+
+Remember that these will return pandas Series objects with the dates as the index and the requested values as the values.
+
+asset_name = 'TSLA'
+
+history = stock.Ticker(asset_name).history(period ='1d', interval = '1h')
+history = stock.Ticker(asset_name).history(period ='1d', interval = '1h')["Close"].iloc[-1]
+####This example gets the data in minute intervals and returns the latest "Close" data.
+
+hist = stock.Ticker(asset_name).history(start='2020-01-01', end='2020-12-31',interval = '1h')['Volume']
+
+# Or if specific day
+pricehist = finance.Ticker(asset).history().loc['2024-01-26':'2024-01-27']['Close']
+hist = stock.Ticker(asset_name).history(start='2020-01-01', end='2020-12-31',interval = '1h')
+volume = hist.loc['2020-01-02', 'Volume']
+
+price = stock.Ticker(asset_name).info.get('currentPrice') # Gets current price
+price = stock.Ticker(asset_name).info.get('regularMarketPrice') #Return None
+price = stock.Ticker(asset_name).info.get('Volume') # retun None if no 'Volume Key'in the info dictionary
+
+##########3 Evaluate
+tickers = ['ABEV3.SA']
+for ticker in tickers:
+    ticker_yahoo = yf.Ticker(ticker)
+    data = ticker_yahoo.history()
+    last_quote = data['Close'].iloc[-1]
+    print(ticker, last_quote)

@@ -1,0 +1,9 @@
+import pandas as pd
+NUMPY
+np.set_printoptions(threshold=np.inf)
+PANDAS
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
+pd.set_option('display.max_seq_items', 1000)
+
+
