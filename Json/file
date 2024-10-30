@@ -1,0 +1,42 @@
+// Fetch and parse CSV data, then filter it by column
+async function fetchAndFilterCSV(apiUrl, columnName, filterValue) {
+    try {
+        // Step 1: Fetch CSV data from API
+        const response = await fetch(apiUrl);
+        const csvData = await response.text();
+
+        // Step 2: Parse CSV data into array of objects
+        const parsedData = parseCSV(csvData);
+
+        // Step 3: Filter the parsed data based on the provided column name and value
+        const filteredData = parsedData.filter(row => row[columnName] === filterValue);
+
+        // Step 4: Return or display the filtered data
+        console.log(filteredData);
+        return filteredData;
+    } catch (error) {
+        console.error("Error fetching or processing CSV data:", error);
+    }
+}
+
+// Utility function to parse CSV string into an array of objects
+function parseCSV(csvString) {
+    const lines = csvString.split('\n');
+    const headers = lines[0].split(',');
+
+    return lines.slice(1).map(line => {
+        const values = line.split(',');
+        const obj = {};
+        headers.forEach((header, index) => {
+            obj[header.trim()] = values[index].trim();
+        });
+        return obj;
+    });
+}
+
+// Example usage:
+const apiUrl = 'https://example.com/data.csv'; // Replace with the actual API URL
+const columnName = 'Name';                     // Replace with the column to filter by
+const filterValue = 'John Doe';                // Replace with the value to match
+
+fetchAndFilterCSV(apiUrl, columnName, filterValue);

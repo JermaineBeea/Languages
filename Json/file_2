@@ -1,0 +1,53 @@
+// exchangeRate.js
+const yahooFinance = require('yahoo-finance2').default;
+
+/**
+ * Fetch the exchange rate between two currencies.
+ *
+ * @param {string} from_x - The currency code to convert from (e.g., 'USD').
+ * @param {string} to_x - The currency code to convert to (e.g., 'ZAR').
+ * @param {string} [period='1d'] - The period for which to fetch data.
+ *        Valid options are ['1d', '5d', '1mo', '3mo', '6mo', '1y', '2y', '5y', '10y', 'ytd', 'max'].
+ * @param {string|null} [interval=null] - The frequency of the data points.
+ *        Options include ['1m', '2m', '5m', '15m', '30m', '60m', '90m', '1wk', '1mo', '3mo'].
+ * @param {string|null} [start_date=null] - The start date for fetching data in 'YYYY-MM-DD' format.
+ * @param {string|null} [end_date=null] - The end date for fetching data in 'YYYY-MM-DD' format.
+ * @returns {Promise<object>} - A Promise resolving to the exchange rate data.
+ */
+async function exchangeRate(from_x, to_x, period = '1d', interval = null, start_date = null, end_date = null) {
+    const currencyPair = `${from_x}${to_x}=X`;
+
+    let options = {
+        period: period
+    };
+
+    if (start_date && end_date) {
+        options.start = start_date;
+        options.end = end_date;
+    }
+
+    if (interval) {
+        options.interval = interval;
+    }
+
+    try {
+        const exchangeRate = await yahooFinance.historical(currencyPair, options);
+
+        if (exchangeRate.length === 0) {
+            console.log(`No data available for ${currencyPair} in the specified range.`);
+            return null;
+        }
+
+        return exchangeRate;
+    } catch (error) {
+        console.error(`Error fetching data for ${currencyPair}:`, error);
+        throw error;
+    }
+}
+
+// Example usage
+exchangeRate('USD', 'ZAR', '1d', '1d')
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+
+module.exports = exchangeRate;

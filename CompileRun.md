@@ -35,3 +35,7 @@ Build and run the project: cargo run
 1. Javac 'Public class name'.java
 2. java  'Public class name'
 
+**SQL**
+sqlite3 your_database.db < your_script.sql
+
+
